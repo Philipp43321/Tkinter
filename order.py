@@ -1,0 +1,21 @@
+from tkinter import*
+from tkinter.ttk import*
+screen  = Tk()
+screen.title("what would you like to order?")
+screen.geometry("500x400")
+screen.config(background="red")
+email = Label(screen,text="Email:").place(x=120,y=40)
+emailbox = Entry(screen,width=20).place(x=170,y=40)
+password = Label(screen,text="Password:").place(x=100,y=70)
+passbox = Entry(screen,width=20).place(x=170,y=70)
+question1 = Label(screen,text="What would you like to drink? water, cola, sprite, juice").place(x=70,y=120)
+qbox1 = Entry(screen,width=25).place(x=70,y=150)
+sbox1 = Spinbox(screen,from_=0,to=1000,width=10).place(x=250,y=150)
+question2 = Label(screen,text="What would you like to eat? Burger, Fries, Hotdog, Pizza").place(x=70,y=190)
+qbox2 = Entry(screen,width=25).place(x=70,y=220)
+sbox2 = Spinbox(screen,from_=0,to=1000,width=10).place(x=250,y=220)
+question3 = Label(screen,text="What would you like for dessert? Ice cream, cake, lolly").place(x=70,y=260)
+qbox3 = Entry(screen,width=25).place(x=70,y=290)
+sbox3 = Spinbox(screen,from_=0,to=1000,width=10).place(x=250,y=290)
+
+mainloop()
