@@ -17,5 +17,5 @@ sbox2 = Spinbox(screen,from_=0,to=1000,width=10).place(x=250,y=220)
 question3 = Label(screen,text="What would you like for dessert? Ice cream, cake, lolly").place(x=70,y=260)
 qbox3 = Entry(screen,width=25).place(x=70,y=290)
 sbox3 = Spinbox(screen,from_=0,to=1000,width=10).place(x=250,y=290)
-
+enter = Button(screen,text="Submit Order", width=15).place(x=180,y=330)
 mainloop()
