@@ -6,11 +6,12 @@ screen.geometry("500x300")
 #function for conversion
 def converter():
     unconv = text.get()
-    if (unconv.replace('.','',1).isdigit()):
+    try:
+        unconv=float(unconv)
         errormessage.place_forget()
         conv = float(unconv)*(9/5) + 32
         outputtext.config(text="Temperature in farenheit: "+str(conv))
-    else:
+    except ValueError:
         errormessage.config(text="Please enter a valid number")
         errormessage.place(x=280,y=95)
 
