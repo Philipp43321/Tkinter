@@ -35,8 +35,24 @@ def youchoice(pc):
     global playerscore,computerscore
     cc = compchoice()
     yousel.config(text="Your selection: "+pc[0])
-    
-    
+    compsel.config(text="Computer's selection: "+cc[0])
+    if pc==cc:
+        tie()
+    elif pc[1] == 0:
+        if cc[1] == 1:
+            compwin()
+        elif cc[1] == 2:
+            youwin()
+    elif pc[1] == 1:
+        if cc[1] == 0:
+            youwin()
+        elif cc[1] == 2:
+            compwin()    
+    elif pc[1] == 2:
+        if cc[1] == 0:
+            compwin()
+        elif cc[1] == 1:
+            youwin()
 
 title = Label(screen,text="ROCK PAPER SCISSORS",font=("Comic Sans MS",30,"bold"),fg="purple")
 title.pack(padx=10,pady=20)
@@ -50,11 +66,11 @@ frame.pack()
 options = Label(frame,text="Your Options:",font=("Comic Sans MS",12))
 options.grid(row=0,column=0)
 
-rock = Button(frame,text="ROCK",width=15,bg="gray")
+rock = Button(frame,text="ROCK",width=15,bg="gray",command=lambda:youchoice(selection[0]))
 rock.grid(row=0,column=1,padx=15,pady=10)
-paper = Button(frame,text="PAPER",width=15,bg="beige")
+paper = Button(frame,text="PAPER",width=15,bg="beige",command=lambda:youchoice(selection[1]))
 paper.grid(row=0,column=2,padx=15,pady=10)
-scissors = Button(frame,text="SCISSORS",width=15,bg="red")
+scissors = Button(frame,text="SCISSORS",width=15,bg="red",command=lambda:youchoice(selection[2]))
 scissors.grid(row=0,column=3,padx=15,pady=10)
 
 score = Label(frame,text="Score:",font=("Comic Sans MS",12))
