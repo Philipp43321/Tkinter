@@ -1,0 +1,25 @@
+from tkinter import*
+from tkinter.filedialog import *
+screen = Tk()
+screen.title("Open/Delete file")
+save = Button(screen,text = "Save")
+save.pack(side=TOP,pady = 5)
+entry = Entry(screen,width=10)
+entry.pack(side=TOP,pady = 5)
+add = Button(screen,text = "Add")
+add.pack(side=LEFT,pady = 5)
+open = Button(screen,text = "Open")
+open.pack(side=TOP,pady = 5)
+delete = Button(screen,text = "Delete")
+delete.pack(side=TOP,pady = 5)
+
+frame = Frame(screen)
+scrollbar = Scrollbar(frame,orient="vertical")
+scrollbar.pack(side=RIGHT,fill=Y)
+listbox = Listbox(frame,width=50,yscrollcommand=scrollbar.set,bg="gray")
+for i in range (100):
+    listbox.insert(END,"file"+str(i))
+listbox.pack(side=RIGHT,padx=5)
+scrollbar.config(command=listbox.yview)
+frame.pack(side=RIGHT)
+screen.mainloop()
