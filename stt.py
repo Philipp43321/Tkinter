@@ -21,6 +21,10 @@ def stt():
         textbox.insert(END,text)
 
 def saveinput():
+    outputbox = textbox.get(1.0,END).strip()
+    if not outputbox:
+      messagebox.showerror("Error","Text could not be saved \n Reason: no text detected")  
+      return
     audiosave = filedialog.asksaveasfile(defaultextension=".txt")
     if audiosave:
         audiosave.write(textbox.get(1.0,END))
