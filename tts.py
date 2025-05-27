@@ -3,6 +3,13 @@ from gtts import gTTS
 import os
 screen = Tk()
 screen.geometry("550x500")
+
+def tts():
+    language = "nl"
+    obj = gTTS(text=entry.get(),lang=language,slow=False)
+    obj.save("tts.wav")
+    os.system("tts.wav")
+
 #frame for label
 frame1 = Frame(screen,bg="red",height=250)
 frame1.pack(fill = X)
@@ -16,7 +23,7 @@ label.place(x=100,y=100)
 entry = Entry(frame2,width=30,bd=5,font=15)
 entry.place(x=130,y=50)
 
-button = Button(frame2,text="CONVERT",font=("Arial",12,"bold"),bg="red")
+button = Button(frame2,text="CONVERT",font=("Arial",12,"bold"),bg="red",command=tts)
 button.place(x=220,y=125)
 
 screen.mainloop()
